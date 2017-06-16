@@ -17,6 +17,16 @@
     }
   }
 
+  &--no-padding-until-medium{
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atMedium{
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+
   /*No padding for wrapper nested in another wrapper*/
   .wrapper{
     padding-left: 0;
