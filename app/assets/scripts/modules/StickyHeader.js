@@ -7,9 +7,11 @@ export default class StickyHeader {
     this.$headerTriggerElement = $('.large-hero__title');
     this.$pageSections = $('.page-section');
     this.$headerLinks = $('.primary-nav a');
+    this.$lazyImages = $(".lazyload");
     this.createHeaderWaypoint();
     this.createPageSectionWaypoints();
     this.addSmoothScrolling();
+    this.refreshWaypoints();
   }
 
   createHeaderWaypoint(){
@@ -29,6 +31,13 @@ export default class StickyHeader {
 
   addSmoothScrolling(){
     this.$headerLinks.smoothScroll();
+  }
+
+  //Fix the lazyloading waypoints issue
+  refreshWaypoints() {
+    this.$lazyImages.on("load", function(){
+      Waypoint.refreshAll();
+    });
   }
 
   createPageSectionWaypoints(){

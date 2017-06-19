@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -11302,9 +11302,11 @@ var StickyHeader = function () {
     this.$headerTriggerElement = (0, _jquery2.default)('.large-hero__title');
     this.$pageSections = (0, _jquery2.default)('.page-section');
     this.$headerLinks = (0, _jquery2.default)('.primary-nav a');
+    this.$lazyImages = (0, _jquery2.default)(".lazyload");
     this.createHeaderWaypoint();
     this.createPageSectionWaypoints();
     this.addSmoothScrolling();
+    this.refreshWaypoints();
   }
 
   _createClass(StickyHeader, [{
@@ -11326,6 +11328,16 @@ var StickyHeader = function () {
     key: 'addSmoothScrolling',
     value: function addSmoothScrolling() {
       this.$headerLinks.smoothScroll();
+    }
+
+    //Fix the lazyloading waypoints issue
+
+  }, {
+    key: 'refreshWaypoints',
+    value: function refreshWaypoints() {
+      this.$lazyImages.on("load", function () {
+        Waypoint.refreshAll();
+      });
     }
   }, {
     key: 'createPageSectionWaypoints',
@@ -11733,7 +11745,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 7 */
+/* 7 */,
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
