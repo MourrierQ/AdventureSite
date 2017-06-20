@@ -6,10 +6,40 @@ Instead edit gulp/template/sprite */
     background-image: url('/assets/images/sprites/{{{sprite}}}');
   }
 
+  .no-svg .icon{
+    background-image: url('/assets/images/sprites/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
+  }
+
+
+
+
+
   {{/first}}
   .icon--{{base}} {
     width: {{width.outer}}px;
     height: {{width.outer}}px;
     background-position: {{position.relative.xy}};
   }
+
+
+
+
+
 {{/shapes}}
+
+
+.icon--clear-view-escapes {
+  width: 142.4px;
+  height: 59.4px;
+
+}
+.icon--fire{
+  width: 56px;
+  height: 64px;
+
+}
+.icon--wifi{
+  width: 58px;
+  height: 64px;
+
+}
