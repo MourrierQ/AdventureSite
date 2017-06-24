@@ -30,6 +30,11 @@
     "webpack": "^2.6.1"
   },
   "devDependencies": {
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-rev": "^7.1.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-usemin": "^0.3.28",
     "normalize.css": "^7.0.0"
   },
   "scripts": {
